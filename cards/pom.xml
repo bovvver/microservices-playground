@@ -114,7 +114,7 @@
                 <version>3.4.5</version>
                 <configuration>
                     <to>
-                        <image>rozruba/${project.artifactId}:s4</image>
+                        <image>rozruba/${project.artifactId}:s6</image>
                     </to>
                 </configuration>
             </plugin>
