@@ -201,7 +201,7 @@ public class AccountsController {
             )
     }
     )
-    @Retry(name = "getBuildInfo", fallbackMethod = "getBuildInfoFallback")
+    @Retry(name = "getBuildInfo",fallbackMethod = "getBuildInfoFallback")
     @GetMapping("/build-info")
     public ResponseEntity<String> getBuildInfo() {
         logger.debug("getBuildInfo() method Invoked");
@@ -235,7 +235,7 @@ public class AccountsController {
             )
     }
     )
-    @RateLimiter(name = "getJavaVersion", fallbackMethod = "getJavaVersionFallback")
+    @RateLimiter(name= "getJavaVersion", fallbackMethod = "getJavaVersionFallback")
     @GetMapping("/java-version")
     public ResponseEntity<String> getJavaVersion() {
         return ResponseEntity
@@ -246,7 +246,7 @@ public class AccountsController {
     public ResponseEntity<String> getJavaVersionFallback(Throwable throwable) {
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .body("Java 17");
+                .body("Java 21");
     }
 
     @Operation(

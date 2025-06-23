@@ -27,6 +27,11 @@ public class CustomersServiceImpl implements ICustomersService {
     private CardsFeignClient cardsFeignClient;
     private LoansFeignClient loansFeignClient;
 
+    /**
+     * @param mobileNumber - Input Mobile Number
+     *  @param correlationId - Correlation ID value generated at Edge server
+     * @return Customer Details based on a given mobileNumber
+     */
     @Override
     public CustomerDetailsDto fetchCustomerDetails(String mobileNumber, String correlationId) {
         Customer customer = customerRepository.findByMobileNumber(mobileNumber).orElseThrow(
@@ -49,6 +54,8 @@ public class CustomersServiceImpl implements ICustomersService {
             customerDetailsDto.setCardsDto(cardsDtoResponseEntity.getBody());
         }
 
+
         return customerDetailsDto;
+
     }
 }

@@ -48,4 +48,6 @@ public class CustomerDetailsDto {
             description = "Cards details of the Customer"
     )
     private CardsDto cardsDto;
+
+
 }
